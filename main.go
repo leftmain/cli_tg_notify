@@ -15,7 +15,6 @@ func main() {
 	configPathHelp := fmt.Sprintf("Config path (default: ~/%s)", config.DEFAULT_CONFIG_NAME)
 
 	configPath := flag.String("c", "", configPathHelp)
-	message := flag.String("m", "", "Message (optional)")
 	setupMode := flag.Bool("s", false, "Setup tg bot")
 
 	flag.Parse()
@@ -30,13 +29,11 @@ func main() {
 		return
 	}
 
-	msg := *message
-	if msg == "" {
-		if len(flag.Args()) == 0 {
-			msg = DEFAULT_MESSAGE
-		} else {
-			msg = strings.Join(flag.Args(), "\n")
-		}
+	var msg string
+	if len(flag.Args()) == 0 {
+		msg = DEFAULT_MESSAGE
+	} else {
+		msg = strings.Join(flag.Args(), "\n")
 	}
 	err = telegram.SendMessage(botConfig, msg)
 	if err != nil {
