@@ -1,6 +1,6 @@
 # send2telegram
 
-A fast and straightforward CLI tool for sending messages directly from your terminal to Telegram. Perfect for developers, system administrators, and automation enthusiasts who need to integrate instant notifications into their workflow.
+A fast and straightforward CLI tool designed for sending messages directly from your terminal to a specific Telegram bot chat. Ideal for developers, system administrators, and automation enthusiasts looking to integrate instant notifications into their workflow. Please note, `send2telegram` is tailored for individual bot chats and does not support sending messages to group chats (yet).
 
 ## Table of Contents
 
@@ -11,20 +11,22 @@ A fast and straightforward CLI tool for sending messages directly from your term
 
 ## Installation
 
-### If you know what is GOPATH
+### If you know what GOPATH is
 ```bash
 git clone https://github.com/leftmain/send2telegram.git
 cd send2telegram
 go install
 ```
 
-### If you want just binary
+### If you want just the binary
 TODO
 
 ## Setup
-You need to provide telegram bot token and chat_id.
-To do it, run `send2telegram -s` and follow instructions.
-
+You need to provide a Telegram bot token and chat_id.
+To do this, run command and follow the instructions:
+```bash
+send2telegram -s
+```
 
 ## Usage
 
@@ -41,8 +43,9 @@ send2telegram -c ~/tg_configs/personal_bot 'Order snacks to be happy'
 
 Add alices to make it useful:
 ```bash
-# ~/.bashrc or ~/.zshrc or what_you_use config
+# Add these lines to ~/.bashrc, ~/.zshrc, or your preferred shell configuration file
 alias work_bot="send2telegram -c ~/tg_configs/work_bot"
 alias personal_bot="send2telegram -c ~/tg_configs/personal_bot"
+...
 ```
 
