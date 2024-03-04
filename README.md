@@ -35,6 +35,17 @@ send2telegram -s
 sleep 1h ; send2telegram 'Time to go!'
 ```
 
+### One argument - one line
+```bash
+send2telegram 'Line 1' 'Line 2'
+```
+
+### Without message arguments you can write to stdin
+```bash
+echo 'blablabla' | send2telegram -c ~/my_lovely_config
+```
+> **Notice:** Arguments have priority, meaning if arguments are provided, stdin input will be ignored.
+
 ### Use different bots
 ```bash
 send2telegram -c ~/tg_configs/work_bot 'Ready for deploy'
