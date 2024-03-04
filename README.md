@@ -11,11 +11,11 @@ A fast and straightforward CLI tool designed for sending messages directly from 
 
 ## Installation
 
-### If you know what GOPATH is
+### If you have go
 ```bash
 git clone https://github.com/leftmain/send2telegram.git
 cd send2telegram
-go install
+go build
 ```
 
 ### If you want just the binary
